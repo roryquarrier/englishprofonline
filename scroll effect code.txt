@@ -1,0 +1,113 @@
+rosa scroll effect
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Rosa</title>
+    <!--Font awesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <!--Scroll reveal CDN-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <section class="hero">
+      <img src="images/hero.jpg" alt="" class="parallax" />
+      <div class="text-wrapper">
+        <h1 class="headline">Parallax</h1>
+        <h2 class="sub-headline">Scrolling Effect</h2>
+      </div>
+    </section>
+    <section class="overflow"></section>
+    <script>
+      window.addEventListener("scroll", function() {
+        const parallax = document.querySelector(".parallax");
+        let scrollPosition = window.pageYOffset;
+        parallax.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
+
+
+styles.css
+@import url("https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap");
+/*Global styles*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-wrapper {
+  text-align: center;
+}
+
+.headline {
+  font-size: 15rem;
+  font-family: "Herr Von Muellerhoff", cursive;
+  color: #c59d5f;
+  font-weight: 100;
+  line-height: 0.4;
+}
+.headline::first-letter {
+  font-size: 20rem;
+}
+
+.sub-headline {
+  font-size: 10rem;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overflow {
+  height: 200vh;
+}
+
+:root {
+  --main-font: "Source Sans Pro", sans-serif;
+  --secondary-font: "Herr Von Muellerhoff", cursive;
+  --body-font: "Cabin", sans-serif;
+  --main-font-color-dark: #252525;
+  --secondary-font-color: #c59d5f;
+  --body-font-color: #515151;
+}
+
