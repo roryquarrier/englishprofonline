@@ -460,6 +460,9 @@ footer {
   .menu-toggle {
     display: none;
   }
+   .nav-list {
+    display: none;
+  }
   .nav {
     justify-content: space-between;
   }
